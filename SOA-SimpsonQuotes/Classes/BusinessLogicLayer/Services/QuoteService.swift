@@ -43,8 +43,8 @@ extension QuoteService {
     }
 }
 
-internal class QuoteServiceImplementation: QuoteService {
-    internal static func register() {
+class QuoteServiceImplementation: QuoteService {
+    static func register() {
         ServiceRegistry.add(service: LazyService(serviceName: quoteServiceName, serviceGetter: {
             QuoteServiceImplementation()
         }))

@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let serviceRegistry: ServiceRegistryImplementation = {
         
         QuoteServiceImplementation.register()
+        KingfisherServiceImplementation.register()
         ImageDataServiceImplementation.register()
         
         return ServiceRegistry

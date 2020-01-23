@@ -22,13 +22,13 @@ extension ImageDataService {
         }
     }
     
-    internal func convertToUIImage(from data: Data) -> UIImage {
+    func convertToUIImage(from data: Data) -> UIImage {
         return UIImage(data: data)!
     }
 }
 
-internal class ImageDataServiceImplementation: ImageDataService {
-    internal static func register() {
+class ImageDataServiceImplementation: ImageDataService {
+    static func register() {
         ServiceRegistry.add(service: LazyService(serviceName: imageDataServiceName, serviceGetter: { () -> Service in
             return ImageDataServiceImplementation()
         }))

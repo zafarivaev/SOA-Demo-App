@@ -14,7 +14,7 @@ extension KingfisherService {
         }
     }
     
-    internal func loadImageFrom(urlString: String, success: @escaping (Data) -> (), failure: @escaping (KingfisherError) -> ()) {
+    func loadImageFrom(urlString: String, success: @escaping (Data) -> (), failure: @escaping (KingfisherError) -> ()) {
         
         guard let url = URL(string: urlString) else {
             return
@@ -34,8 +34,8 @@ extension KingfisherService {
     
 }
 
-internal class KingfisherServiceImplementation: KingfisherService {
-    internal static func register() {
+class KingfisherServiceImplementation: KingfisherService {
+    static func register() {
         ServiceRegistry.add(service: LazyService(serviceName: kingfisherServiceName, serviceGetter: { () -> Service in
             return KingfisherServiceImplementation()
         }))
