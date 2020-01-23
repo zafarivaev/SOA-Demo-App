@@ -18,7 +18,7 @@ extension ServiceRegistryImplementation {
     }
 }
 
-protocol QuoteService: SOAService {
+protocol QuoteService: Service {
     func getQuotes(count: Int, success: @escaping (Int, [Quote]) -> (), failure: @escaping (Int) -> ())
 }
 
@@ -45,7 +45,7 @@ extension QuoteService {
 
 internal class QuoteServiceImplementation: QuoteService {
     internal static func register() {
-        ServiceRegistry.add(service: SOALazyService(serviceName: quoteServiceName, serviceGetter: {
+        ServiceRegistry.add(service: LazyService(serviceName: quoteServiceName, serviceGetter: {
             QuoteServiceImplementation()
         }))
     }

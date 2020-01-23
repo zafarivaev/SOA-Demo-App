@@ -3,7 +3,7 @@ import Kingfisher
 
 private let kingfisherServiceName = "KingfisherService"
 
-protocol KingfisherService: SOAService {
+protocol KingfisherService: Service {
     func loadImageFrom(urlString: String, success: @escaping (Data) -> (), failure: @escaping (KingfisherError) -> ())
 }
 
@@ -36,7 +36,7 @@ extension KingfisherService {
 
 internal class KingfisherServiceImplementation: KingfisherService {
     internal static func register() {
-        ServiceRegistry.add(service: SOALazyService(serviceName: kingfisherServiceName, serviceGetter: { () -> SOAService in
+        ServiceRegistry.add(service: LazyService(serviceName: kingfisherServiceName, serviceGetter: { () -> Service in
             return KingfisherServiceImplementation()
         }))
     }

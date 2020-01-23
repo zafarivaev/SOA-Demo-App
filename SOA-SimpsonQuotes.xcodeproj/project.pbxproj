@@ -19,7 +19,7 @@
 		1C72465E23DA043C0094DDCD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72465D23DA043C0094DDCD /* NetworkClient.swift */; };
 		1C72466123DA06770094DDCD /* BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72466023DA06770094DDCD /* BaseURLs.swift */; };
 		1C72466423DA078A0094DDCD /* SimpsonsRequestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72466323DA078A0094DDCD /* SimpsonsRequestConfigurator.swift */; };
-		1C773A1623D8C70900BC3B33 /* SOAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C773A1523D8C70900BC3B33 /* SOAService.swift */; };
+		1C773A1623D8C70900BC3B33 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C773A1523D8C70900BC3B33 /* Service.swift */; };
 		1CDEB5BD23BF22A200487615 /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDEB5BC23BF22A200487615 /* ImageDataService.swift */; };
 		1CDEB5C123BF28B400487615 /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDEB5C023BF28B400487615 /* KingfisherService.swift */; };
 		1CE0CA7623BE4A0C000B6E63 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0CA7523BE4A0C000B6E63 /* QuoteService.swift */; };
@@ -47,7 +47,7 @@
 		1C72465D23DA043C0094DDCD /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		1C72466023DA06770094DDCD /* BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLs.swift; sourceTree = "<group>"; };
 		1C72466323DA078A0094DDCD /* SimpsonsRequestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpsonsRequestConfigurator.swift; sourceTree = "<group>"; };
-		1C773A1523D8C70900BC3B33 /* SOAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOAService.swift; sourceTree = "<group>"; };
+		1C773A1523D8C70900BC3B33 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1CDEB5BC23BF22A200487615 /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
 		1CDEB5C023BF28B400487615 /* KingfisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherService.swift; sourceTree = "<group>"; };
 		1CE0CA7523BE4A0C000B6E63 /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		1C72465823D9F8020094DDCD /* BusinessLogicLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1C72466523DA09120094DDCD /* Entities */,
 				1CE0CA7023BE47D4000B6E63 /* Services */,
 			);
 			path = BusinessLogicLayer;
@@ -230,11 +231,10 @@
 		1CE0CA7023BE47D4000B6E63 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1C72466523DA09120094DDCD /* Entities */,
 				1CE0CA7523BE4A0C000B6E63 /* QuoteService.swift */,
 				1CDEB5BC23BF22A200487615 /* ImageDataService.swift */,
 				1CDEB5C023BF28B400487615 /* KingfisherService.swift */,
-				1C773A1523D8C70900BC3B33 /* SOAService.swift */,
+				1C773A1523D8C70900BC3B33 /* Service.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 				1C01723A23BD115E00B80FCE /* AppDelegate.swift in Sources */,
 				1C3331D523BE2E55006A6DD4 /* Quote.swift in Sources */,
 				1C3331CD23BE219D006A6DD4 /* QuotesRouter.swift in Sources */,
-				1C773A1623D8C70900BC3B33 /* SOAService.swift in Sources */,
+				1C773A1623D8C70900BC3B33 /* Service.swift in Sources */,
 				1CE0CA8123BE72F1000B6E63 /* QuoteDetailPresenter.swift in Sources */,
 				1CE0CA7923BE52B9000B6E63 /* Endpoints.swift in Sources */,
 				1C72466123DA06770094DDCD /* BaseURLs.swift in Sources */,

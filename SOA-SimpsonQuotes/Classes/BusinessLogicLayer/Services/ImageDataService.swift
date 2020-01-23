@@ -10,7 +10,7 @@ import UIKit
 
 private let imageDataServiceName = "ImageDataService"
 
-protocol ImageDataService: SOAService {
+protocol ImageDataService: Service {
     
     func convertToUIImage(from data: Data) -> UIImage
 }
@@ -29,7 +29,7 @@ extension ImageDataService {
 
 internal class ImageDataServiceImplementation: ImageDataService {
     internal static func register() {
-        ServiceRegistry.add(service: SOALazyService(serviceName: imageDataServiceName, serviceGetter: { () -> SOAService in
+        ServiceRegistry.add(service: LazyService(serviceName: imageDataServiceName, serviceGetter: { () -> Service in
             return ImageDataServiceImplementation()
         }))
     }
