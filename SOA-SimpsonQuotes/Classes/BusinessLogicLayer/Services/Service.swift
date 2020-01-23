@@ -14,15 +14,15 @@ protocol Service {
 }
 
 extension Service {
-    internal func register() {
+    func register() {
         ServiceRegistry.add(service: self)
     }
 }
 
 final class LazyService : Service {
-    internal let serviceName : String
+    let serviceName : String
 
-    internal lazy var serviceGetter : (() -> Service) = {
+    lazy var serviceGetter : (() -> Service) = {
         if self.service == nil {
             self.service = self.implementationGetter()
         }
@@ -33,7 +33,7 @@ final class LazyService : Service {
 
     private var service : Service? = nil
 
-    internal init(serviceName : String, serviceGetter : @escaping (() -> Service)) {
+    init(serviceName : String, serviceGetter : @escaping (() -> Service)) {
         self.serviceName = serviceName
         self.implementationGetter = serviceGetter
     }
@@ -42,20 +42,20 @@ final class LazyService : Service {
 struct ServiceRegistryImplementation {
     private static var serviceDictionary : [String : LazyService] = [:]
     
-    internal func add(service: LazyService) {
+    func add(service: LazyService) {
         if ServiceRegistryImplementation.serviceDictionary[service.serviceName] != nil {
-            print("WARNING: registering service \(service.serviceName) is already registered.")
+            print("WARNING: service \(service.serviceName) is already registered.")
         }
         ServiceRegistryImplementation.serviceDictionary[service.serviceName] = service
     }
     
-    internal func add(service: Service) {
+    func add(service: Service) {
         add(service: LazyService(serviceName: service.serviceName, serviceGetter: { service }))
     }
 
-    internal func serviceWith(name: String) -> Service {
+    func serviceWith(name: String) -> Service {
         guard let resolvedService = ServiceRegistryImplementation().get(serviceWithName: name) else {
-            fatalError("Error: SOAService \(name) is not registered with the ServiceRegistry.")
+            fatalError("Error: SOAService \(name) is not registered via ServiceRegistry.")
         }
         return resolvedService
     }
